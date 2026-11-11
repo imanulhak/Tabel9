@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Interaktif: Tabel & Formula di Microsoft Word (Kelas 9)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="bg-indigo-700 p-2.5 rounded-xl shadow-inner text-indigo-200">
+                    <i class="fa-solid fa-table-cells text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg tracking-tight">TIK Kelas 9 • Pembelajaran Mendalam</h1>
+                    <p class="text-xs text-indigo-300">Materi: Tabel & Formula di Microsoft Word</p>
+                </div>
+            </div>
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-wrap justify-center gap-1.5 bg-indigo-950/60 p-1.5 rounded-xl border border-indigo-800">
+                <button onclick="switchTab('beranda')" id="btn-beranda" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-medium transition-all bg-indigo-600 text-white shadow flex items-center gap-1.5">
+                    <i class="fa-solid fa-house"></i> Beranda
+                </button>
+                <button onclick="switchTab('panduan')" id="btn-panduan" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-medium transition-all text-indigo-200 hover:bg-indigo-800 hover:text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-book-open"></i> Panduan & Rumus
+                </button>
+                <button onclick="switchTab('kuis')" id="btn-kuis" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-medium transition-all text-indigo-200 hover:bg-indigo-800 hover:text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-gamepad"></i> Kuis Interaktif
+                </button>
+                <button onclick="switchTab('praktik')" id="btn-praktik" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-medium transition-all text-indigo-200 hover:bg-indigo-800 hover:text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-laptop-code"></i> Tantangan Praktik
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8">
+
+        <!-- TAB 1: BERANDA / PENGANTAR (Mindful Learning) -->
+        <section id="beranda" class="tab-content active space-y-8 animate-fadeIn">
+            <!-- Hero Banner -->
+            <div class="bg-gradient-to-br from-indigo-900 via-indigo-800 to-blue-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 opacity-10 translate-x-8 translate-y-8">
+                    <i class="fa-solid fa-file-word text-9xl"></i>
+                </div>
+                <div class="max-w-2xl relative z-10 space-y-4">
+                    <span class="bg-indigo-600/80 text-indigo-100 text-xs font-semibold px-3 py-1 rounded-full border border-indigo-400/30">
+                        Mindful Learning • Kontekstual & Bermakna
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+                        Kuasai Pembuatan Tabel & Formula di Microsoft Word!
+                    </h2>
+                    <p class="text-indigo-200 text-sm sm:text-base leading-relaxed">
+                        Pernahkah kamu melihat laporan keuangan, daftar nilai rapor, atau jadwal pelajaran yang berantakan karena ditulis hanya pakai spasi? Hari ini kita akan belajar bagaimana merapikan data dengan tabel profesional dan menghitung otomatis langsung di Microsoft Word!
+                    </p>
+                    <div class="pt-4 flex flex-wrap gap-3">
+                        <button onclick="switchTab('panduan')" class="bg-white text-indigo-900 hover:bg-indigo-50 font-semibold px-6 py-3 rounded-xl shadow-md transition-all flex items-center gap-2 text-sm">
+                            Mulai Belajar Sekarang <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mengapa Belajar Ini? (Mindful & Meaningful) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">1. Mindful: Sadar Kerapian</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Menyadari bahwa informasi yang terstruktur dalam tabel jauh lebih mudah dibaca, dianalisis, dan dipahami oleh orang lain dibandingkan paragraf biasa.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">2. Formula Otomatis</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Tidak perlu kalkulator manual atau pindah aplikasi! Microsoft Word memiliki fitur <strong>Formula</strong> untuk menjumlahkan dan merata-rata data dengan cepat.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">3. Berguna di Dunia Nyata</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Sangat berguna untuk menyusun proposal kegiatan sekolah, laporan kas kelas, daftar inventaris lab, hingga surat resmi kedinasan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: PANDUAN & RUMUS (Meaningful Learning) -->
+        <section id="panduan" class="tab-content space-y-8 animate-fadeIn">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 space-y-6">
+                <div>
+                    <span class="text-indigo-600 font-semibold text-xs tracking-wider uppercase">Modul 1</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-1">Langkah-Langkah Membuat & Memformat Tabel di MS Word</h2>
+                    <p class="text-slate-600 text-sm mt-1">Pelajari dasar pembuatan struktur tabel yang baik dan benar sesuai standar dokumen profesional.</p>
+                </div>
+
+                <!-- Step Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <div class="text-indigo-600 font-extrabold text-xl mb-2">01</div>
+                        <h4 class="font-bold text-slate-800 mb-1">Sisipkan Tabel</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Buka MS Word > Pilih tab <strong>Insert</strong> > Klik <strong>Table</strong> > Tentukan jumlah Kolom (ke samping) dan Baris (ke bawah) sesuai kebutuhan data.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <div class="text-indigo-600 font-extrabold text-xl mb-2">02</div>
+                        <h4 class="font-bold text-slate-800 mb-1">Desain & Tata Letak</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Gunakan tab <strong>Table Design</strong> untuk memberi warna header (Shading) dan garis tabel (Borders). Gunakan <strong>Layout</strong> untuk mengatur posisi teks (Alignment).
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <div class="text-indigo-600 font-extrabold text-xl mb-2">03</div>
+                        <h4 class="font-bold text-slate-800 mb-1">Atur Posisi Teks & Angka</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Aturan penting: Teks keterangan rata kiri, nomor urut di tengah, dan nilai/harga uang <strong>rata kanan</strong> agar mudah dihitung dan dibaca.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modul 2: Formula Word -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 space-y-6">
+                <div>
+                    <span class="text-indigo-600 font-semibold text-xs tracking-wider uppercase">Modul 2</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-1">Menggunakan Formula / Rumus di Tabel Word</h2>
+                    <p class="text-slate-600 text-sm mt-1">Meskipun bukan Excel, Word memiliki fitur hitung otomatis melalui menu <strong>Layout > Formula</strong>.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border border-indigo-100 bg-indigo-50/50 p-5 rounded-2xl space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-indigo-600 text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm">
+                                SUM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">=SUM(ABOVE) atau =SUM(LEFT)</h4>
+                                <p class="text-xs text-indigo-700">Menjumlahkan seluruh data angka di atas atau di sebelah kiri sel.</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600">
+                            Digunakan saat kamu ingin membuat baris total harga belanjaan atau total nilai ujian siswa.
+                        </p>
+                    </div>
+
+                    <div class="border border-blue-100 bg-blue-50/50 p-5 rounded-2xl space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm">
+                                AVG
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">=AVERAGE(ABOVE)</h4>
+                                <p class="text-xs text-blue-700">Mencari nilai rata-rata dari data angka di atasnya.</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600">
+                            Sangat berguna untuk mencari rata-rata nilai rapor atau rata-rata pengeluaran bulanan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: KUIS INTERAKTIF (Joyful Learning) -->
+        <section id="kuis" class="tab-content space-y-6 animate-fadeIn">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pb-4 border-b border-slate-100">
+                    <div>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full">Joyful Learning • Tantangan Kuis</span>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-2">Uji Pemahaman Tabel & Formula Word</h2>
+                    </div>
+                    <div id="quiz-score-badge" class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-xl font-bold text-sm border border-indigo-100">
+                        Soal <span id="current-q-num">1</span> dari 4
+                    </div>
+                </div>
+
+                <!-- Quiz Box -->
+                <div id="quiz-container" class="space-y-6">
+                    <div id="question-text" class="text-lg font-semibold text-slate-800">
+                        <!-- Pertanyaan dimuat via JS -->
+                    </div>
+
+                    <div id="options-container" class="grid grid-cols-1 gap-3">
+                        <!-- Pilihan jawaban dimuat via JS -->
+                    </div>
+
+                    <div id="quiz-feedback" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+
+                    <div class="flex justify-end pt-4">
+                        <button id="next-quiz-btn" onclick="nextQuestion()" class="hidden bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2.5 rounded-xl text-sm shadow transition-all">
+                            Pertanyaan Selanjutnya <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Result Screen -->
+                <div id="quiz-result" class="hidden text-center py-12 space-y-4">
+                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">Kuis Selesai!</h3>
+                    <p class="text-slate-600 text-sm max-w-md mx-auto">
+                        Hebat! Kamu telah menyelesaikan kuis pemahaman materi Tabel dan Formula di Microsoft Word dengan skor:
+                    </p>
+                    <div class="text-4xl font-extrabold text-indigo-600" id="final-score-text">0 / 4</div>
+                    <div class="pt-4">
+                        <button onclick="restartQuiz()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2.5 rounded-xl text-sm shadow transition-all">
+                            Ulangi Kuis <i class="fa-solid fa-rotate-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: TANTANGAN PRAKTIK (Hands-on Project) -->
+        <section id="praktik" class="tab-content space-y-6 animate-fadeIn">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 space-y-6">
+                <div>
+                    <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">Hands-on Practice • Studi Kasus Nyata</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-2">Simulasi Proyek: Laporan Keuangan Kas Kelas</h2>
+                    <p class="text-slate-600 text-sm mt-1">Pelajari studi kasus di bawah ini, lalu praktikkan langsung di aplikasi Microsoft Word di komputer atau laptopmu!</p>
+                </div>
+
+                <!-- Preview Kasus -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <div class="bg-slate-100 px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+                        <span class="font-bold text-xs text-slate-700 uppercase tracking-wider"><i class="fa-solid fa-file-word text-blue-600 mr-2"></i> Contoh Dokumen Laporan Kas Kelas.docx</span>
+                        <span class="text-xs text-slate-500 font-medium">Tabel 4 Kolom x 5 Baris</span>
+                    </div>
+                    <div class="p-4 overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-indigo-900 text-white">
+                                    <th class="p-3 border border-indigo-800 text-center">No</th>
+                                    <th class="p-3 border border-indigo-800">Uraian Kebutuhan</th>
+                                    <th class="p-3 border border-indigo-800 text-right">Harga Satuan (Rp)</th>
+                                    <th class="p-3 border border-indigo-800 text-right">Jumlah Total (Rp)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 border border-slate-200 text-center font-medium">1</td>
+                                    <td class="p-3 border border-slate-200">Spidol Whiteboard (2 pcs)</td>
+                                    <td class="p-3 border border-slate-200 text-right">15.000</td>
+                                    <td class="p-3 border border-slate-200 text-right font-semibold">30.000</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 border border-slate-200 text-center font-medium">2</td>
+                                    <td class="p-3 border border-slate-200">Penghapus Papan Tulis</td>
+                                    <td class="p-3 border border-slate-200 text-right">12.000</td>
+                                    <td class="p-3 border border-slate-200 text-right font-semibold">12.000</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 border border-slate-200 text-center font-medium">3</td>
+                                    <td class="p-3 border border-slate-200">Kertas HVS (1 Rim)</td>
+                                    <td class="p-3 border border-slate-200 text-right">45.000</td>
+                                    <td class="p-3 border border-slate-200 text-right font-semibold">45.000</td>
+                                </tr>
+                                <tr class="bg-indigo-50/60 font-bold">
+                                    <td colspan="3" class="p-3 border border-slate-200 text-right">TOTAL PENGELUARAN:</td>
+                                    <td class="p-3 border border-slate-200 text-right text-indigo-700">=SUM(ABOVE)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Langkah Instruksi Praktik -->
+                <div class="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-slate-800 text-base flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-indigo-600"></i> Tugas Praktik Mandiri Siswa:
+                    </h3>
+                    <ul class="space-y-2.5 text-sm text-slate-700 list-disc list-inside">
+                        <li>Buka aplikasi <strong>Microsoft Word</strong> di komputer kamu.</li>
+                        <li>Buatlah tabel dengan format seperti contoh di atas (4 kolom, 5 baris).</li>
+                        <li>Berikan warna latar belakang (Shading) biru tua pada baris header judul tabel.</li>
+                        <li>Atur perataan teks: Kolom No di <strong>Center</strong>, Uraian di <strong>Left</strong>, serta Harga dan Jumlah Total di <strong>Right</strong>.</li>
+                        <li>Gunakan menu <strong>Layout > Formula</strong> dengan rumus <code class="bg-slate-200 px-2 py-0.5 rounded font-mono text-xs text-indigo-700">=SUM(ABOVE)</code> pada baris total paling bawah.</li>
+                        <li>Simpan dokumen dengan nama: <code class="bg-slate-200 px-2 py-0.5 rounded font-mono text-xs text-slate-800">Praktik_Tabel_NamaLengkap_Kelas9.docx</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500">
+            <p>Materi TIK Kelas 9 • Pembelajaran Mendalam (Deep Learning) Berbasis Interaktif</p>
+            <p class="mt-1">Dibuat khusus untuk Pembelajaran Kreatif & Menyenangkan.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white', 'shadow');
+                btn.classList.add('text-indigo-200', 'hover:bg-indigo-800', 'hover:text-white');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('text-indigo-200', 'hover:bg-indigo-800', 'hover:text-white');
+            activeBtn.classList.add('bg-indigo-600', 'text-white', 'shadow');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Quiz Data
+        const quizData = [
+            {
+                question: "Menu apa yang pertama kali diklik di Microsoft Word untuk membuat tabel baru?",
+                options: [
+                    "A. Insert > Table",
+                    "B. Home > Paragraph",
+                    "C. Layout > Margins",
+                    "D. References > Table of Contents"
+                ],
+                correct: 0,
+                explanation: "Benar! Untuk menyisipkan tabel ke dalam dokumen Word, kita menggunakan menu Insert lalu pilih Table."
+            },
+            {
+                question: "Rumus formula Word apa yang digunakan untuk menjumlahkan data angka di atas sel saat ini?",
+                options: [
+                    "A. =TOTAL(LEFT)",
+                    "B. =SUM(ABOVE)",
+                    "C. =AVERAGE(BELOW)",
+                    "D. =ADD(TOP)"
+                ],
+                correct: 1,
+                explanation: "Tepat sekali! Formula =SUM(ABOVE) digunakan untuk menjumlahkan angka yang berada di atas sel rumus."
+            },
+            {
+                question: "Bagaimana aturan posisi perataan (alignment) yang baik untuk kolom angka harga atau nilai dalam tabel?",
+                options: [
+                    "A. Rata Kiri (Align Left)",
+                    "B. Rata Tengah (Center)",
+                    "C. Rata Kanan (Align Right)",
+                    "D. Rata Kiri Kanan (Justify)"
+                ],
+                correct: 2,
+                explanation: "Hebat! Kolom angka/harga wajib rata kanan (Align Right) agar nilai satuan, puluhan, dan ratusan sejajar dengan rapi."
+            },
+            {
+                question: "Di tab manakah letak tombol menu Formula untuk menghitung otomatis angka di dalam tabel Word?",
+                options: [
+                    "A. Tab Home",
+                    "B. Tab Insert",
+                    "C. Tab Table Design",
+                    "D. Tab Layout"
+                ],
+                correct: 3,
+                explanation: "Benar! Menu Formula terletak di tab Layout (bagian menu Data setelah tabel dipilih)."
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        function loadQuiz() {
+            answered = false;
+            const q = quizData[currentQuizIndex];
+            document.getElementById('current-q-num').innerText = currentQuizIndex + 1;
+            document.getElementById('question-text').innerText = q.question;
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 text-sm font-medium text-slate-700 transition-all flex items-center justify-between";
+                btn.innerHTML = `<span>${opt}</span> <i class="fa-solid fa-circle-notch text-transparent"></i>`;
+                btn.onclick = () => selectAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            document.getElementById('next-quiz-btn').classList.add('hidden');
+        }
+
+        function selectAnswer(selectedIndex, btnElement) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizData[currentQuizIndex];
+            const allBtns = document.getElementById('options-container').children;
+
+            if (selectedIndex === q.correct) {
+                btnElement.classList.remove('border-slate-200', 'hover:bg-indigo-50/50');
+                btnElement.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900');
+                btnElement.querySelector('i').className = "fa-solid fa-circle-check text-emerald-600";
+                score++;
+            } else {
+                btnElement.classList.remove('border-slate-200', 'hover:bg-indigo-50/50');
+                btnElement.classList.add('bg-rose-50', 'border-rose-500', 'text-rose-900');
+                btnElement.querySelector('i').className = "fa-solid fa-circle-xmark text-rose-600";
+                
+                // Show correct
+                allBtns[q.correct].classList.remove('border-slate-200', 'hover:bg-indigo-50/50');
+                allBtns[q.correct].classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900');
+                allBtns[q.correct].querySelector('i').className = "fa-solid fa-circle-check text-emerald-600";
+            }
+
+            const feedback = document.getElementById('quiz-feedback');
+            feedback.className = selectedIndex === q.correct ? 
+                "p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-800 border border-emerald-200" : 
+                "p-4 rounded-xl text-sm font-medium bg-rose-50 text-rose-800 border border-rose-200";
+            feedback.innerHTML = `<strong>${selectedIndex === q.correct ? 'Benar!' : 'Kurang Tepat!'}</strong> ${q.explanation}`;
+            feedback.classList.remove('hidden');
+
+            document.getElementById('next-quiz-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            if (currentQuizIndex < quizData.length) {
+                loadQuiz();
+            } else {
+                document.getElementById('quiz-container').classList.add('hidden');
+                document.getElementById('quiz-score-badge').classList.add('hidden');
+                document.getElementById('final-score-text').innerText = `${score} / ${quizData.length}`;
+                document.getElementById('quiz-result').classList.remove('hidden');
+            }
+        }
+
+        function restartQuiz() {
+            currentQuizIndex = 0;
+            score = 0;
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('quiz-score-badge').classList.remove('hidden');
+            document.getElementById('quiz-result').classList.add('hidden');
+            loadQuiz();
+        }
+
+        // Initialize Quiz on load
+        window.onload = function() {
+            loadQuiz();
+        };
+    </script>
+</body>
+</html>
